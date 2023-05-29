@@ -1,0 +1,414 @@
+$svtloSiva: #bbc7c1;
+$roza: rgb(228,92,173);
+$plava: #5ffae0;
+$siva: #737373;
+$tamnoSiva: #82817d;
+
+@mixin txt {
+  color: $svtloSiva;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+@mixin title{
+    margin-top: 4%;
+    margin-bottom: 8%;
+    color: $svtloSiva;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+@keyframes upadanje-od-dole {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes upadanje-od-gore {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  *{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+  background: linear-gradient(rgba(72, 74, 80, 0.9), rgba(75, 76, 78, 0.9)), url('../img/baner.jpg');
+  
+}
+
+.centering {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+}
+
+nav{
+    .line{
+        border-left:1px solid $svtloSiva;
+        height: 229px;
+        margin-left: 18px;
+    }
+    ul{
+        list-style-type: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    li{
+        text-transform: uppercase;
+        font-size: 13px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+         a{
+            text-decoration: none;
+            @include txt;
+            &:hover {
+                border-bottom: 2px solid transparent;
+                border-image: linear-gradient(90deg, rgba(228,92,173,1) 0%, rgba(112,255,191,1) 100%);
+                border-image-slice: 1;
+            }
+    }
+}
+
+#first-part{
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-image: linear-gradient(90deg, rgba(228,92,173,1) 0%, rgba(112,255,191,1) 100%);
+  border-image-slice: 1;
+  padding: 30px;
+  
+  h1{
+    @include txt;
+
+    font-size: 70px;
+    animation-name: upadanje-od-gore;
+    animation-duration: 2s;
+    
+}
+h2{
+  @include txt;
+  padding-bottom: 20px;
+  animation-name: upadanje-od-dole;
+  animation-duration: 2s;
+  
+}
+.btn{
+  padding: 10px 23px;
+  border-radius: 25px;
+  border: 3px solid $svtloSiva;
+  background: rgb(0,0,0,0);
+  text-decoration: none;
+      @include txt;
+      animation-name: upadanje-od-gore;
+      animation-duration: 5s;
+      &:hover{
+          background-color: $svtloSiva ;
+          color: white;
+      }
+}
+}
+
+#second-part{
+      width: 90%;
+      margin: 0px auto;
+      h1{
+        @include title;
+       }
+      #about{
+        display:flex;
+        justify-content: space-around;
+      }
+      figure img{
+        height: 400px;
+        box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.4);
+        transition: 1s;
+        &:hover{
+        opacity: 1;
+        box-shadow: 0px 0px 27px 6px $roza;
+        transform: scale(1.1, 1.1);
+        }
+      }
+      .blokovi{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        .blok{
+            @include txt;
+            h2{
+              padding-bottom: 40px;
+              color: $roza;
+            }
+          table{
+              td{
+                padding: 5px;
+              }
+              .g{
+                color: $roza;
+              }
+              .l{
+                text-align: center;
+              }
+          }   
+        }
+      } 
+}
+nav{
+  .r{
+    height: 190px;
+  }
+}
+.bg{
+    background: $tamnoSiva;
+    #third-part{
+      width: 70%;
+      margin: 0px auto;
+      margin-bottom: 0px;
+      h1{
+        @include title;
+      }
+      #skills{
+        display:flex;
+        flex-direction: column;
+      }
+      .details{
+        display: flex;  
+        justify-content: space-between;
+        margin-bottom: 10px;
+        @include txt;
+      }
+      .bar{
+        border: 2px solid $svtloSiva;
+        border-radius: 20px;
+      }
+      .bar div{
+        width: 0;
+        height: 9px;
+        border-radius: 10px;
+      }
+      .sk:not(:last-child){
+        margin-bottom: 30px;
+      }
+      #html-bar{
+        width: 90%;
+        background-color: $plava;
+      }
+      #css-bar{
+        width: 80%;
+        background-color: $plava;
+      }
+      #sql-bar{
+        width: 50%;
+        background-color: $plava;
+      }
+      #js-bar{
+        width: 20%;
+        background-color: $plava;
+      }
+      #c-bar{
+        width: 60%;
+        background-color: $plava;
+      }
+    }
+}
+.content{
+  display:flex;
+  justify-content: space-around;
+  margin-left: 20px;
+}
+#fourth-part{
+    width:100%;
+    h1{
+      @include title;
+    }
+      .ct{
+        width: 17%;
+        @include txt;
+        text-align: center;
+        background-color: $siva;
+        padding:10px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 5px rgb(107, 247, 247);
+        &:hover{
+          box-shadow: none;
+          color: $siva;
+          background-color: $plava;
+        }
+        i{
+          font-size: 35px;
+          padding: 10px;
+          }
+        }
+        h2{
+          padding: 10px;
+        }
+      }
+
+    #fifth-part{
+      width: 100%;
+      h1{
+        @include title;
+      }
+      #projects{
+        width: 100%;
+      }
+      .pr{
+        position: relative;
+        display: flex;
+        width: 45%;
+        &:hover .overlay {opacity: 1;
+            visibility: visible;
+        }
+        &:hover img{
+          filter: blur(5px)
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          border-radius: 20px;
+        }
+        .overlay{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s;
+         
+          h3, p{
+            margin: 20px 0;
+            font-family: 'Signika Negative', sans-serif;
+            color: $roza;
+            
+          }
+          .but {
+            padding: 5px 15px;
+            border-radius: 25px;
+            border: 2px solid $svtloSiva;
+            background: rgb(0,0,0,0);
+            cursor: pointer;
+            text-decoration: none;
+            color: $roza;
+            font-family: 'Signika Negative', sans-serif;
+            &:hover{
+              background-color: $svtloSiva;
+              color: $roza;
+            }
+          }
+        }
+      }
+    }
+    #sixth-part{
+      width: 90%;
+      h1{
+        @include title;
+      }
+      .content{
+        margin-left: 5%;
+      }
+      .con{
+        width: 30%;
+        background-color: $siva;
+        border-radius: 15px;
+      }
+      .links{
+        display: flex;
+        height: 30%;
+        margin-bottom: 4%;
+        align-items: center;
+        @include txt;
+      }
+        a{
+          color: $plava;
+          &:hover{
+            color: $svtloSiva;
+          }
+        }
+        .iko{
+          font-size: 25px;
+          width: 15%;
+          text-align: center;
+          color: $plava;
+        }
+      form{
+        display:flex;
+        flex-direction: column;
+        .fb{
+          margin: 10% auto;
+          width: 20%;
+          padding: 5px 5px;
+          border-radius: 20px;
+          border: 2px solid $svtloSiva;
+          background: rgb(0,0,0,0);
+          text-align: center;
+          text-decoration: none;
+          color: $plava;
+          &:hover{
+            background-color: $svtloSiva;
+          }
+        }
+        .polje{
+          margin-top: 10px;
+          border: none;
+          background-color: $siva;
+          border-bottom: 1px solid $svtloSiva;
+          padding: 20px;
+          font-size: 15px;
+          color: $plava;
+        }
+        ::placeholder{
+          color: $plava;
+        }
+      }
+      .soc{
+        width: 10%;
+        .iko{
+          margin: 35% auto;
+          &:hover{
+            color: $svtloSiva;
+          }
+        }
+      }
+    }
+    footer{
+      background-color: #3e3e3e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      @include txt;
+      .d{
+        margin-right: 5%;
+      }
+      .ft{
+        margin-left: 5%;
+        a{
+          color: $svtloSiva;
+        }
+        i{
+          font-size: 25px;
+          margin: 0px 10px;
+          &:hover{
+            color: $plava;
+          }
+      }
+}
+}
